@@ -1,0 +1,39 @@
+@borderColor: rgba(235, 235, 235, .5);
+.home {
+  &_sub {
+    background-color: rgba(255, 255, 255, 1);
+    &_header {
+      text-align: left;
+      font-size: 0.16rem;
+      border-bottom: 1px solid @borderColor;
+      padding: 0.1rem 0.15rem;
+    }
+    &_list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &_item {
+      flex: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 33.33%;
+      height: 1rem;
+      border-right: 1px solid @borderColor;
+      border-bottom: 1px solid @borderColor;
+      &:nth-child(3n) {
+        border-right: none;
+      }
+      .item_icon {
+        flex: none;
+        width: .3rem;
+        min-height: .25rem;
+      }
+      .text {
+        flex: none;
+        margin-top: .05rem;
+      }
+    }
+  }
+}

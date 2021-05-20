@@ -3,7 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no">
+    <!--__WITHOUT_GULP_REM__-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!--__END__-->
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -24,7 +30,45 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>班车</title>
+    <script>
+      (function flexibleLite (window, document) {
+        const fontSizeDefault = 100
+        const docEl = document.documentElement
+
+        // adjust body font size
+        function setBodyFontSize () {
+          if (document.body) {
+            document.body.style.fontSize = 14 + 'px'
+          } else {
+            document.addEventListener('DOMContentLoaded', setBodyFontSize)
+          }
+        }
+        setBodyFontSize();
+
+        // set 1rem = viewWidth / 10
+        function setRemUnit () {
+          var rem = docEl.clientWidth / 375 * fontSizeDefault
+          docEl.style.fontSize = rem + 'px'
+          /*
+          *  解决安卓端字体放大 影响样式
+          */
+          var settedFs = parseFloat(window.getComputedStyle(document.documentElement)["font-size"]),
+              settingFs = parseFloat(document.getElementsByTagName('html')[0].style.fontSize)
+          var mirem = rem * (settingFs / settedFs)
+          docEl.style.fontSize = mirem + 'px'    
+        }
+        setRemUnit()
+
+        // reset rem unit on page resize
+        window.addEventListener('resize', setRemUnit)
+        window.addEventListener('pageshow', function (e) {
+          if (e.persisted) {
+            setRemUnit()
+          }
+        })
+      }(window, document))
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

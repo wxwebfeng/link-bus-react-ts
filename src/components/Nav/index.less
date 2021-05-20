@@ -1,0 +1,29 @@
+.header_nav {
+  display: flex;
+  align-items: center;
+  height: 0.48rem;
+  line-height: 0.48rem;
+  background-color: rgba(255, 255, 255, 1);
+  &_item {
+    flex: 1 1;
+    text-align: center;
+    &.selected {
+      color: #FB4D4D;
+      span::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: .03rem;
+        background-color: #FB4D4D;
+      }
+    }
+    span {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      padding: 0 .05rem;
+    }
+  }
+}
