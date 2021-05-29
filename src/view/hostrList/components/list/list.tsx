@@ -1,7 +1,7 @@
 /*
  * @Author: miaojf
  * @Date: 2021-05-19 11:27:16
- * @LastEditTime: 2021-05-19 17:27:11
+ * @LastEditTime: 2021-05-20 10:25:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /link-bus-ract-ts/src/view/hostrList/components/list.tsx
@@ -18,7 +18,7 @@ const ListDiv = styled.div`
 export default class List extends Component {
   render() {
     return (
-      <ListDiv className="list">
+      <ListDiv>
         <Item />
       </ListDiv>
     )

@@ -1,0 +1,86 @@
+.item_header {
+  height: 1.36rem;
+  border-radius: .1rem;
+  position: relative;
+  padding: .1rem;
+  color: #f4f4f4;
+  text-align: center;
+  &_main {
+    position: relative;
+    height: 100%;
+    border-radius: .08rem;
+    overflow: hidden;
+    &.defaultBg {
+      background-color: #0498FF;
+    }
+    &.animationBgSZ {
+      animation: bgTransSZ 0.3s steps(1, end) alternate infinite;
+    }
+    &.animationBgHZ {
+      animation: bgTransHZ 0.3s steps(1, end) alternate infinite;
+    }
+  }
+  &_time {
+    font-size: .38rem;
+    font-weight: bold;
+    height: .6rem;
+    line-height: .6rem;
+  }
+  &_info {
+    display: flex;
+    align-items: center;
+    &_text {
+      flex: 1;
+      p {
+        height: .22rem;
+        line-height: .22rem;
+        font-size: .12rem;
+      }
+      .list_item_name {
+        font-weight: bold;
+        font-size: .15rem;
+        &.fontSize18 {
+          font-size: .18rem;
+        }
+      }
+    }
+    .direction_right {
+      flex: none;
+      width: .52rem;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: .18rem;
+      .icon_column {
+        flex: 1 1 auto;
+        background-color: #fff;
+        height: .03rem;
+      }
+      .icon_triangle {
+        flex: none;
+        border: .05rem solid #fff;
+        border-left-width: .08rem;
+        border-right-width: .08rem;
+        border-right-color: transparent;
+        border-top-color: transparent;
+      }
+    }
+  }
+}
+
+@keyframes bgTransHZ {
+  0% {
+    background-color: #0498FF;
+  }
+  50% {
+    background-color: #B94FD0;
+  }
+}
+
+@keyframes bgTransSZ {
+  0% {
+    background-color: #0498FF;
+  }
+  50% {
+    background-color: #F7B500;
+  }
+}
